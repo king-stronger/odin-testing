@@ -2,7 +2,8 @@ const {
     capitalize,
     reverseString,
     calculator,
-    caesarCipher
+    caesarCipher,
+    analyzeArray
 } = require('./main');
 
 
@@ -34,3 +35,12 @@ test("27 / 9 equals 3", () => {
 test("The caesar cipher of def with a shift of -3 is abc", () => {
     expect(caesarCipher("def", -3)).toMatch("abc");
 });
+
+test("The average, min, max and length of [1,8,3,4,2,6] are 4, 1, 8, 6", () => {
+    expect(analyzeArray([1,8,3,4,2,6])).toEqual({
+        average: 4,
+        min: 1,
+        max: 8,
+        length: 6
+     })
+})

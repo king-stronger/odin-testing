@@ -46,10 +46,35 @@ function hash(char, alphabet, shift){
     return char === char.toUpperCase() ? alphabet.at(newLetterIndex).toUpperCase() : alphabet.at(newLetterIndex);
 }
 
+function analyzeArray(arr){
+    let max = arr[0];
+    let min = arr[0];
+
+    console.log(max, min)
+    let sum = arr.reduce((prev, cur) => {
+        if(cur > max){
+            max = cur;
+        }
+
+        if(cur < min){
+            min = cur;
+        }
+
+        return prev + cur;
+    })
+
+    return {
+        max,
+        min,
+        length: arr.length,
+        average: sum / arr.length
+    }
+}
 
 module.exports = {
     capitalize,
     reverseString,
     calculator,
-    caesarCipher
+    caesarCipher,
+    analyzeArray
 }
