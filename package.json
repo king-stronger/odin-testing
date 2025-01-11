@@ -1,0 +1,23 @@
+{
+  "name": "odin-testing",
+  "version": "1.0.0",
+  "description": "Testing practice",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/king-stronger/odin-testing.git"
+  },
+  "keywords": [],
+  "author": "Stronger Alaefule",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/king-stronger/odin-testing/issues"
+  },
+  "homepage": "https://github.com/king-stronger/odin-testing#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
