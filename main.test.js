@@ -1,7 +1,8 @@
 const {
     capitalize,
     reverseString,
-    calculator
+    calculator,
+    caesarCipher
 } = require('./main');
 
 
@@ -28,4 +29,8 @@ test("5 * 6 equals 30", () => {
 
 test("27 / 9 equals 3", () => {
     expect(calculator.divide(27, 9)).toBe(3);
+});
+
+test("The caesar cipher of def with a shift of -3 is abc", () => {
+    expect(caesarCipher("def", -3)).toMatch("abc");
 });

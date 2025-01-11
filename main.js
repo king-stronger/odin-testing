@@ -19,8 +19,37 @@ const calculator = {
     divide: (a, b) => a / b
 }
 
+function caesarCipher(string, shift){
+    let alphabet = [..."abcdefghijklmnopqrstuvwxyz"];
+    
+    let cipher = [...string].map(char => {
+        return hash(char, alphabet, shift);
+    });
+
+    return cipher.join('');
+}
+
+function hash(char, alphabet, shift){
+    let tempChar = char.toLowerCase();
+    let index = alphabet.indexOf(tempChar);
+        
+    if(index === -1 || shift % 26 === 0){
+        return tempChar;
+    }
+
+    let newLetterIndex = index + shift;
+
+    if(newLetterIndex > 26){
+        newLetterIndex -= 26;
+    }
+
+    return char === char.toUpperCase() ? alphabet.at(newLetterIndex).toUpperCase() : alphabet.at(newLetterIndex);
+}
+
+
 module.exports = {
     capitalize,
     reverseString,
-    calculator
+    calculator,
+    caesarCipher
 }
